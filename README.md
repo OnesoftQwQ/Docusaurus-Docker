@@ -97,6 +97,3 @@ docker run -it --rm -p 8080:3000 ... # 主机8080->容器3000
 ```bash
 docker logs -f 容器名
 ```
-
-## 问题反馈
-欢迎提 [Issues](https://github.com/onesoftqwq/Docusaueus-Docker/issues)
