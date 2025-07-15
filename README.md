@@ -2,7 +2,7 @@
 
 # Docusaurus Docker 镜像
 
-本项目提供自动预构建的 [Docusaurus](https://docusaurus.io/) 文档站点 Docker 镜像，支持开箱即用、持久化存储和国内npm镜像加速。镜像已发布至 [Docker Hub](https://hub.docker.com/r/onesoftqwq/docusaurus)。每月1日自动构建。
+本项目提供自动预构建的 [Docusaurus](https://docusaurus.io/) 文档站点 Docker 镜像，支持开箱即用和持久化存储。镜像已发布至 [Docker Hub](https://hub.docker.com/r/onesoftqwq/docusaurus)。每月1日自动构建。
 
 ## 直接使用预构建镜像
 

@@ -2,7 +2,7 @@
 
 # Docusaurus Docker Image
 
-This project provides pre-built Docker images for [Docusaurus](https://docusaurus.io/) documentation sites, featuring out-of-the-box support, persistent storage, and accelerated npm mirror for China. The images are published on [Docker Hub](https://hub.docker.com/r/onesoftqwq/docusaurus). Automatic builds occur on the 1st of each month.
+This project provides pre-configured Docker images for hosting [Docusaurus](https://docusaurus.io/) sites, offering out-of-the-box support and persistent storage. Published on [Docker Hub](https://hub.docker.com/r/onesoftqwq/docusaurus), the images are rebuilt automatically on the 1st of each month.
 
 ## Using Pre-built Images
 
