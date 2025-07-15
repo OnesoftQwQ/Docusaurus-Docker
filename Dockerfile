@@ -1,4 +1,4 @@
-FROM guergeiro/pnpm
+FROM guergeiro/pnpm:current-latest-alpine
 VOLUME [ "/docusaurus" ]
 COPY entrypoint.sh /entrypoint.sh
 # RUN pnpm config set registry https://registry.npmmirror.com \

@@ -36,7 +36,7 @@ docker run -it --rm -p 3000:3000 -v /本地/文档目录:/docusaurus my-docusaur
 
 ## 特性
 
-- **开箱即用**：预装 Docusaurus v2 + TypeScript 模板
+- **开箱即用**：预装 Docusaurus v3 + TypeScript 模板
 - **数据持久化**：通过卷挂载保存所有修改
 - **自动初始化**：首次启动自动创建项目结构
 - **热重载**：修改文档内容实时生效

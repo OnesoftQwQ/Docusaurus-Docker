@@ -36,7 +36,7 @@ docker run -it --rm -p 3000:3000 -v /local/docs/directory:/docusaurus my-docusau
 
 ## Features
 
-- **Out-of-the-box**: Pre-installed Docusaurus v2 + TypeScript template
+- **Out-of-the-box**: Pre-installed Docusaurus v3 + TypeScript template
 - **Data Persistence**: All modifications saved via volume mount
 - **Auto Initialization**: Automatically creates project structure on first launch
 - **Hot Reload**: Real-time updates when modifying content
