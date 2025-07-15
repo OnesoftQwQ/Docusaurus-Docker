@@ -1,10 +1,8 @@
-README.md written by DeepSeek
-
-其实这半个项目都是用的 DeepSeek 写的，不管了总之能用
+[English Version](https://github.com/OnesoftQwQ/Docusaurus-Docker/blob/master/README_en.md)
 
 # Docusaurus Docker 镜像
 
-本项目提供预构建的 [Docusaurus](https://docusaurus.io/) 文档站点 Docker 镜像，支持开箱即用、持久化存储和国内npm镜像加速。镜像已发布至 [Docker Hub](https://hub.docker.com/r/onesoftqwq/docusaurus)。
+本项目提供自动预构建的 [Docusaurus](https://docusaurus.io/) 文档站点 Docker 镜像，支持开箱即用、持久化存储和国内npm镜像加速。镜像已发布至 [Docker Hub](https://hub.docker.com/r/onesoftqwq/docusaurus)。每月1日自动构建。
 
 ## 直接使用预构建镜像
 
@@ -39,7 +37,6 @@ docker run -it --rm -p 3000:3000 -v /本地/文档目录:/docusaurus my-docusaur
 ## 特性
 
 - **开箱即用**：预装 Docusaurus v2 + TypeScript 模板
-- **国内优化**：默认使用 [npmmirror](https://registry.npmmirror.com) 镜像源
 - **数据持久化**：通过卷挂载保存所有修改
 - **自动初始化**：首次启动自动创建项目结构
 - **热重载**：修改文档内容实时生效
