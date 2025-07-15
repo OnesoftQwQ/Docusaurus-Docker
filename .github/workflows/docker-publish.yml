@@ -6,21 +6,22 @@ name: Docker Publish
 # documentation.
 
 on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: '要构建的分支或标签'
+        required: true
+        default: 'master'
+        type: string
   schedule:
     - cron: '30 15 * * *'
     - cron: '0 0 1 * *'   # 每月1号0点触发
-  push:
-    branches: [ "master" ]
-    # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
-  pull_request:
-    branches: [ "master" ]
 
 env:
-  # Use docker.io for Docker Hub if empty
-  REGISTRY: ghcr.io
-  # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
+  # Use docker.io for Docker Hub
+  REGISTRY: docker.io
+  # Docker Hub repository name (format: <dockerhub_username>/<repo>)
+  IMAGE_NAME: OnesoftQwQ/Docusaurus
 
 
 jobs:
@@ -59,8 +60,8 @@ jobs:
         uses: docker/login-action@343f7c4344506bcbf9b4de18042ae17996df046d # v3.0.0
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
