@@ -7,12 +7,6 @@ name: Docker Publish
 
 on:
   workflow_dispatch:
-    inputs:
-      ref:
-        description: '要构建的分支或标签'
-        required: true
-        default: 'master'
-        type: string
   schedule:
     - cron: '30 15 * * *'
     - cron: '0 0 1 * *'   # 每月1号0点触发
@@ -70,6 +64,8 @@ jobs:
         uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934 # v5.0.0
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=raw,latest
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
