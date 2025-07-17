@@ -2,7 +2,15 @@
 
 # Docusaurus Docker Image
 
-This project provides pre-configured Docker images for hosting [Docusaurus](https://docusaurus.io/) sites, offering out-of-the-box support and persistent storage. Published on [Docker Hub](https://hub.docker.com/r/onesoftqwq/docusaurus), the images are rebuilt automatically on the 1st of each month.
+This project provides automatically pre-built [Docusaurus](https://docusaurus.io/) documentation site Docker images, supporting out-of-the-box usage and persistent storage. The images have been published to [Docker Hub](https://hub.docker.com/r/onesoftqwq/docusaurus) and are automatically built on the 1st of each month.
+
+## Features
+
+- **Out-of-the-box**: Pre-installed Docusaurus v3 + TypeScript template
+- **Data persistence**: Save all modifications through volume mounting
+- **Auto-initialization**: Automatically creates project structure on first launch
+- **Hot reload**: Real-time updates when modifying documentation content
+- **Lightweight**: Based on efficient Alpine Linux base image
 
 ## Using Pre-built Images
 
@@ -12,7 +20,8 @@ docker run -it --rm -p 3000:3000 -v /local/docs/directory:/docusaurus onesoftqwq
 
 - `-p 3000:3000`: Maps container port 3000 to host
 - `-v /local/docs/directory:/docusaurus`: Mounts local directory for persistence (**must replace with actual path**)
-- Automatically initializes Docusaurus project on first launch
+- You can place a pre-made Docusaurus project directly into the mounted directory after container creation, and the container will automatically start the project upon launch
+- If the mounted directory is empty, an empty Docusaurus project will be automatically initialized and run at startup
 
 Visit [http://localhost:3000](http://localhost:3000) to view the site.
 
@@ -34,14 +43,6 @@ docker build -t my-docusaurus .
 docker run -it --rm -p 3000:3000 -v /local/docs/directory:/docusaurus my-docusaurus
 ```
 
-## Features
-
-- **Out-of-the-box**: Pre-installed Docusaurus v3 + TypeScript template
-- **Data Persistence**: All modifications saved via volume mount
-- **Auto Initialization**: Automatically creates project structure on first launch
-- **Hot Reload**: Real-time updates when modifying content
-- **Lightweight**: Based on efficient Alpine Linux base image
-
 ## Directory Structure
 
 | Container Path | Description |
@@ -52,7 +53,7 @@ docker run -it --rm -p 3000:3000 -v /local/docs/directory:/docusaurus my-docusau
 
 ## FAQ
 
-### How to update content?
+### How to update documentation content?
 Modify files directly in the mounted directory:
 ```bash
 # Example mounted directory structure
@@ -72,10 +73,10 @@ pnpm add package_name
 ```
 
 ### How to modify site configuration?
-Edit `docusaurus.config.js` in mounted directory:
-```js
-module.exports = {
-  title: 'My Documentation Site',  // Modify site title
+Edit `docusaurus.config.ts` in the mounted directory:
+```ts
+const config: Config = {
+  title: 'My Site',  // Modify site title
   themeConfig: {
     navbar: {
       items: [ /* Navigation items */ ]
